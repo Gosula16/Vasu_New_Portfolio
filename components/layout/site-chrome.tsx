@@ -12,6 +12,28 @@ import { EasterEgg } from "@/components/widgets/easter-egg";
 import { LoadingScreen } from "@/components/widgets/loading-screen";
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
+  React.useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    const navigation = performance.getEntriesByType("navigation")[0] as
+      | PerformanceNavigationTiming
+      | undefined;
+
+    if (navigation?.type !== "reload") return;
+
+    if (window.location.pathname !== "/") {
+      window.location.replace("/");
+      return;
+    }
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", "/");
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <>
       <LoadingScreen />
