@@ -40,8 +40,10 @@ export function CertificationsView() {
                   priority={index < 3}
                 />
               </div>
-              <div className="border-t border-[var(--border)] px-4 py-3 text-sm font-semibold">
-                {certificate.title}
+              <div className="border-t border-[var(--border)] px-4 py-3">
+                <div className="text-sm font-semibold text-[var(--fg)]">{certificate.title}</div>
+                <div className="mt-1 text-xs text-[var(--muted)]">{certificate.issuer}</div>
+                <div className="mt-1 text-[11px] text-[var(--muted)]">{certificate.date}</div>
               </div>
             </Link>
           </Reveal>

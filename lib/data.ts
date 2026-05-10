@@ -167,10 +167,15 @@ export const experience = [
 ];
 
 export const certifications = [
-  "ServiceNow CSA Certified",
-  "ServiceNow CAD Certified",
-  "Oracle Generative AI Certified",
-  "Multiple Coursera Certifications",
+  "Micro-Certification - Welcome to ServiceNow",
+  "ServiceNow Certified System Administrator (CSA)",
+  "ServiceNow Certified Application Developer (CAD)",
+  "AWS Solutions Architecture Job Simulation",
+  "Accenture Software Engineering Job Simulation",
+  "Tata GenAI Powered Data Analytics Job Simulation",
+  "Synapse 2K25 Hackathon - Certificate of Participation",
+  "Oracle Cloud Infrastructure 2025 Generative AI Professional",
+  "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
 ];
 
 export const achievements = [
