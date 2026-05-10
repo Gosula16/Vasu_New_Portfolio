@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
@@ -166,8 +167,15 @@ export function Hero() {
                       …
                     </p>
                   </div>
-                  <div className="hidden h-14 w-14 shrink-0 rounded-2xl bg-[color-mix(in_oklab,var(--neon)_18%,transparent)] ring-1 ring-[color-mix(in_oklab,var(--neon)_35%,transparent)] sm:flex items-center justify-center font-mono text-xs font-bold text-[var(--fg)]">
-                        GV
+                  <div className="relative hidden h-20 w-20 shrink-0 overflow-hidden rounded-2xl ring-1 ring-[color-mix(in_oklab,var(--neon)_35%,transparent)] sm:block">
+                    <Image
+                      src="/vasu.jpeg"
+                      alt={personal.name}
+                      fill
+                      priority
+                      sizes="80px"
+                      className="object-cover object-[50%_28%]"
+                    />
                   </div>
                 </div>
 
