@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppProviders } from "@/components/providers/app-providers";
 import { SiteChrome } from "@/components/layout/site-chrome";
 import { siteConfig } from "@/lib/data";
+import { getSiteUrl } from "@/lib/site";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -18,7 +19,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: siteConfig.title,
     template: `%s · ${siteConfig.siteName}`,
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
-    url: siteConfig.url,
+    url: getSiteUrl(),
     siteName: siteConfig.siteName,
     locale: "en_IN",
     type: "website",
