@@ -21,11 +21,6 @@ export function AiAssistant() {
 
   const [idx, setIdx] = React.useState(0);
 
-  React.useEffect(() => {
-    if (!open) return;
-    setIdx(0);
-  }, [open]);
-
   const send = () => {
     if (!text.trim()) return;
     setText("");
@@ -37,10 +32,13 @@ export function AiAssistant() {
       <motion.button
         type="button"
         aria-label="Open assistant"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setIdx(0);
+          setOpen(true);
+        }}
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.98 }}
-        className="fixed bottom-6 right-6 z-[55] inline-flex h-14 w-14 items-center justify-center rounded-3xl border border-[var(--border)] bg-[var(--glass-strong)] text-[var(--fg)] shadow-[0_22px_90px_rgba(0,0,0,0.35)] backdrop-blur"
+        className="fixed bottom-6 right-6 z-[55] hidden h-14 w-14 items-center justify-center rounded-3xl border border-[var(--border)] bg-[var(--glass-strong)] text-[var(--fg)] shadow-[0_22px_90px_rgba(0,0,0,0.35)] backdrop-blur md:inline-flex"
       >
         <Sparkles className="h-6 w-6 text-[var(--neon)]" />
       </motion.button>

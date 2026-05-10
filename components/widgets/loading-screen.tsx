@@ -15,7 +15,7 @@ export function LoadingScreen() {
       return;
     }
 
-    setShow(true);
+    const frame = window.requestAnimationFrame(() => setShow(true));
     const t = window.setTimeout(() => {
       setShow(false);
       try {
@@ -25,7 +25,10 @@ export function LoadingScreen() {
       }
     }, 900);
 
-    return () => window.clearTimeout(t);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(t);
+    };
   }, []);
 
   return (

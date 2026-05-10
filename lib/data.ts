@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Gosula Venkata Vasu · Portfolio",
   description:
     "Aspiring software engineer portfolio — AI/ML, full-stack craft, and premium UX built with Next.js.",
-  url: "https://vasu-portfolio.vercel.app",
+  url: "https://vasu-portfolio-ashen.vercel.app",
 };
 
 export const personal = {
@@ -17,7 +17,7 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/gosula-venkata-vasu-965a1931b",
   github: "https://github.com/vasugosula",
   githubUsername: "vasugosula",
-  resumePath: "/resume.pdf",
+  resumePath: "/resume.docx",
   intro: `A passionate and highly motivated Computer Science student specializing in Artificial Intelligence and Machine Learning, with strong interests in software engineering, AI technologies, cloud computing, and full-stack development. Enthusiastic about building innovative digital products, solving real-world problems, and continuously learning emerging technologies.`,
   summary: `Dedicated and goal-oriented B.Tech student with hands-on experience in web development, AI concepts, and software project development. Skilled in frontend technologies, programming fundamentals, database management, and cloud platforms. Passionate about developing scalable software applications and exploring AI-driven innovations.`,
   careerGoals: [

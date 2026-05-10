@@ -10,7 +10,7 @@ export function SpotifyNowPlaying() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8, duration: 0.45 }}
-      className="fixed bottom-40 left-6 z-[54] hidden w-[280px] md:block"
+      className="fixed bottom-6 left-6 z-[54] hidden w-[280px] 2xl:block"
     >
       <div className="glass-strong rounded-3xl border border-[var(--border)] p-4 shadow-[0_22px_90px_rgba(0,0,0,0.35)]">
         <div className="flex items-center gap-3">

@@ -27,7 +27,6 @@ function useTyping(text: string, speed = 34) {
   const [out, setOut] = React.useState("");
   React.useEffect(() => {
     let i = 0;
-    setOut("");
     const id = window.setInterval(() => {
       i += 1;
       setOut(text.slice(0, i));
@@ -53,12 +52,6 @@ export function Hero() {
     <section className="relative overflow-hidden pt-24">
       <div className="bg-mesh absolute inset-0 -z-20" />
       <ParticleField />
-
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-[color-mix(in_oklab,var(--accent)_22%,transparent)] blur-3xl" />
-        <div className="absolute -right-28 top-40 h-80 w-80 rounded-full bg-[color-mix(in_oklab,var(--accent-2)_18%,transparent)] blur-3xl" />
-        <div className="absolute bottom-10 left-1/3 h-72 w-72 rounded-full bg-[color-mix(in_oklab,var(--neon)_14%,transparent)] blur-3xl" />
-      </div>
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-12 lg:pt-14">
         <div className="lg:col-span-7">
@@ -128,7 +121,7 @@ export function Hero() {
               )}
             >
               <Download className="h-4 w-4" />
-              Résumé PDF
+              Résumé DOCX
             </a>
           </motion.div>
 
@@ -193,7 +186,7 @@ export function Hero() {
                       <span className="text-[var(--neon)]">$</span> focus AI/ML · full-stack craft
                     </div>
                     <div className="text-[var(--muted)]">
-                      // ship clarity, motion, and measurable UX wins
+                      {"// ship clarity, motion, and measurable UX wins"}
                     </div>
                   </div>
                 </div>

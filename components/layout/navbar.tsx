@@ -22,10 +22,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  React.useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={cn(
@@ -102,6 +98,7 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setOpen(false)}
                     className={cn(
                       "rounded-xl px-3 py-3 text-sm",
                       active

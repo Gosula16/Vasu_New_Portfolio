@@ -10,7 +10,7 @@ export function FeaturedProjects() {
   const featured = projects.filter((p) => p.featured);
 
   return (
-    <Reveal className="mx-auto max-w-7xl px-4 sm:px-6">
+    <Reveal className="mx-auto w-full max-w-7xl overflow-hidden px-4 sm:px-6">
       <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
         <div>
           <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
@@ -29,9 +29,9 @@ export function FeaturedProjects() {
         </Link>
       </div>
 
-      <div className="mt-8 flex gap-6 overflow-x-auto pb-4 pt-2 [scrollbar-width:thin]">
+      <div className="mt-8 flex max-w-full gap-6 overflow-x-auto overscroll-x-contain pb-4 pt-2 [scrollbar-width:thin]">
         {featured.map((p) => (
-          <div key={p.id} className="min-w-[min(92vw,420px)] shrink-0">
+          <div key={p.id} className="w-[min(88vw,420px)] shrink-0">
             <TiltProjectCard project={p} />
           </div>
         ))}

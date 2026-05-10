@@ -132,7 +132,7 @@ export function ContactForm() {
           className="flex items-center gap-2 rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-200"
         >
           <Check className="h-4 w-4" />
-          Sent—I'll get back to you soon.
+          Sent—I&apos;ll get back to you soon.
         </motion.div>
       ) : null}
     </form>
