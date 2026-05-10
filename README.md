@@ -26,6 +26,18 @@ Set this environment variable locally and in Vercel:
 GEMINI_API_KEY=your_google_ai_studio_key
 ```
 
+## Spotify Now Playing
+
+The Spotify card reads from `/api/spotify-now-playing` and keeps credentials server-side.
+
+Set these environment variables locally and in Vercel:
+
+```bash
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+SPOTIFY_REFRESH_TOKEN=refresh_token_with_user_read_currently_playing_scope
+```
+
 ## Deploy on Vercel (recommended)
 
 1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
