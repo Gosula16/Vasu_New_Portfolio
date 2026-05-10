@@ -5,7 +5,7 @@ import { Hero } from "@/components/sections/hero";
 import { ServicesPreview } from "@/components/sections/services-preview";
 import { StatsStrip } from "@/components/sections/stats-strip";
 import { TerminalConsole } from "@/components/sections/terminal-console";
-import { Testimonials } from "@/components/sections/testimonials";
+// import { Testimonials } from "@/components/sections/testimonials";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <GithubHeatmap />
       <TerminalConsole />
       <ServicesPreview />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <ContactCta />
     </main>
   );
