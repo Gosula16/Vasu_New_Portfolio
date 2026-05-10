@@ -16,6 +16,16 @@ npm run build
 
 Open [http://localhost:3000](http://localhost:3000) for local development.
 
+## Gemini Portfolio Assistant
+
+The floating assistant answers questions about Vasu's portfolio through a server-side route at `/api/portfolio-chat`.
+
+Set this environment variable locally and in Vercel:
+
+```bash
+GEMINI_API_KEY=your_google_ai_studio_key
+```
+
 ## Deploy on Vercel (recommended)
 
 1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
