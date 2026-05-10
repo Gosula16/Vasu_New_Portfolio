@@ -10,23 +10,10 @@ import { personal } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
-const homeSectionByHref: Record<string, string> = {
-  "/": "home",
-  "/about": "about",
-  "/projects": "projects",
-  "/experience": "experience",
-  "/certifications": "certifications",
-  "/services": "services",
-  "/blog": "blog",
-  "/contact": "contact",
-};
-
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState("home");
-  const isHome = pathname === "/";
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -34,35 +21,6 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  React.useEffect(() => {
-    if (!isHome) return;
-
-    const sections = Object.values(homeSectionByHref)
-      .map((id) => document.getElementById(id))
-      .filter((section): section is HTMLElement => Boolean(section));
-
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id);
-        }
-      },
-      {
-        rootMargin: "-28% 0px -55% 0px",
-        threshold: [0.08, 0.2, 0.4, 0.6],
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, [isHome]);
 
   return (
     <header
@@ -87,13 +45,11 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => {
-            const sectionId = homeSectionByHref[item.href];
-            const href = isHome && sectionId ? `#${sectionId}` : item.href;
-            const active = isHome && sectionId ? activeSection === sectionId : pathname === item.href;
+            const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
-                href={href}
+                href={item.href}
                 className={cn(
                   "relative rounded-full px-3 py-2 text-sm text-[var(--muted)] transition-colors hover:text-[var(--fg)]",
                   active && "text-[var(--fg)]"
@@ -137,13 +93,11 @@ export function Navbar() {
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
               {navItems.map((item) => {
-                const sectionId = homeSectionByHref[item.href];
-                const href = isHome && sectionId ? `#${sectionId}` : item.href;
-                const active = isHome && sectionId ? activeSection === sectionId : pathname === item.href;
+                const active = pathname === item.href;
                 return (
                   <Link
                     key={item.href}
-                    href={href}
+                    href={item.href}
                     onClick={() => setOpen(false)}
                     className={cn(
                       "rounded-xl px-3 py-3 text-sm",

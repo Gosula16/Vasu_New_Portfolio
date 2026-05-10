@@ -7,7 +7,7 @@ import { CursorGlow } from "@/components/effects/cursor-glow";
 import { ScrollProgress } from "@/components/effects/scroll-progress";
 import { CommandPalette } from "@/components/widgets/command-palette";
 import { AiAssistant } from "@/components/widgets/ai-assistant";
-// import { SpotifyNowPlaying } from "@/components/widgets/spotify-card";
+import { SpotifyNowPlaying } from "@/components/widgets/spotify-card";
 import { EasterEgg } from "@/components/widgets/easter-egg";
 import { LoadingScreen } from "@/components/widgets/loading-screen";
 
@@ -24,7 +24,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         <Footer />
         <CommandPalette />
         <AiAssistant />
-        {/* <SpotifyNowPlaying /> */}
+        <SpotifyNowPlaying />
       </div>
     </>
   );
