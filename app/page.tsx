@@ -1,6 +1,7 @@
 import { ContactCta } from "@/components/sections/contact-cta";
+import { CertificatesGallery } from "@/components/sections/certificates-gallery";
 import { FeaturedProjects } from "@/components/sections/featured-projects";
-import { GithubHeatmap } from "@/components/sections/github-heatmap";
+// import { GithubHeatmap } from "@/components/sections/github-heatmap";
 import { Hero } from "@/components/sections/hero";
 import { ServicesPreview } from "@/components/sections/services-preview";
 import { StatsStrip } from "@/components/sections/stats-strip";
@@ -13,7 +14,8 @@ export default function Home() {
       <Hero />
       <StatsStrip />
       <FeaturedProjects />
-      <GithubHeatmap />
+      {/* <GithubHeatmap /> */}
+      <CertificatesGallery />
       <TerminalConsole />
       <ServicesPreview />
       {/* <Testimonials /> */}
